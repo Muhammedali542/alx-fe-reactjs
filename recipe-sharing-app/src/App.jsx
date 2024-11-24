@@ -1,36 +1,20 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import RecipeList from "./components/RecipeList";
-import SearchBar from "./components/SearchBar";
-import useRecipeStore from "./components/recipeStore";
+import AddRecipeForm from "./components/AddRecipeForm"; // Import AddRecipeForm
+import RecipeDetails from "./components/RecipeDetails"; // Import RecipeDetails
 
 const App = () => {
-  const setRecipes = useRecipeStore((state) => state.setRecipes);
-
-  // Mock recipe data
-  useEffect(() => {
-    setRecipes([
-      {
-        id: 1,
-        title: "Spaghetti Bolognese",
-        description: "A classic Italian dish.",
-      },
-      { id: 2, title: "Chicken Curry", description: "Spicy and flavorful." },
-      {
-        id: 3,
-        title: "Vegetable Stir Fry",
-        description: "Healthy and quick to make.",
-      },
-    ]);
-  }, [setRecipes]);
-
   return (
     <Router>
       <div style={{ padding: "20px", maxWidth: "800px", margin: "auto" }}>
         <h1>Recipe Sharing App</h1>
-        <SearchBar />
         <Routes>
           <Route path="/" element={<RecipeList />} />
+          <Route path="/add" element={<AddRecipeForm />} />{" "}
+          {/* AddRecipeForm route */}
+          <Route path="/recipe/:id" element={<RecipeDetails />} />{" "}
+          {/* RecipeDetails route */}
         </Routes>
       </div>
     </Router>
