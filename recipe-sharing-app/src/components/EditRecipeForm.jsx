@@ -1,4 +1,3 @@
-// EditRecipeForm.js
 import React, { useState, useEffect } from "react";
 import useRecipeStore from "./recipeStore";
 
@@ -21,8 +20,9 @@ const EditRecipeForm = ({ recipe }) => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  const handleSubmit = (event) => {
+    // Explicitly prevent the default form submission behavior
+    event.preventDefault();
     updateRecipe({ ...recipe, ...formData });
   };
 
