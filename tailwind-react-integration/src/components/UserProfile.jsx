@@ -7,7 +7,7 @@ function UserProfile() {
         class="rounded-full w-36 h-36 max-auto"
       />
       <h1 class=" my-4 text-xl text-blue-800">John Doe</h1>
-      <p class=" text-xl text-blue-800">
+      <p class="text-gray-600 text-base">
         Developer at Example Co. Loves to write code and explore new
         technologies.
       </p>
