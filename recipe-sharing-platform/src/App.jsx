@@ -2,15 +2,12 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import HomePage from "./components/HomePage";
 
 function App() {
   const [count, setCount] = useState(0);
 
-  return (
-    <div>
-      <h1 className="text-cyan-500 text-center">Checking for tailwind</h1>
-    </div>
-  );
+  return <HomePage />;
 }
 
 export default App;
